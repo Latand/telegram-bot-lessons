@@ -14,6 +14,7 @@ async def send_to_admin(*args):
 async def start(message: Message, state: FSMContext):
     await message.answer("Привет, Введи пожалуйста свое Имя.")
     await Form.Name.set()
+    # Или можно еще сделать так await.Form.next()
 
 
 @dp.message_handler(state=Form.Name)
@@ -22,6 +23,7 @@ async def name_func(message: Message, state: FSMContext):
     await state.update_data(name=name)
     await message.answer("Теперь введите свою Фамилию")
     await Form.Surname.set()
+    # Или можно еще сделать так await.Form.next()
 
 
 @dp.message_handler(state=Form.Surname)
@@ -30,6 +32,7 @@ async def surname_func(message: Message, state: FSMContext):
     await state.update_data(surname=surname)
     await message.answer("Теперь введите свою дату рождения")
     await Form.DOB.set()
+    # Или можно еще сделать так await.Form.next()
 
 
 @dp.message_handler(state=Form.DOB)
@@ -38,6 +41,7 @@ async def dob_func(message: Message, state: FSMContext):
     await state.update_data(dob=dob)
     await message.answer("Теперь введите свой город")
     await Form.City.set()
+    # Или можно еще сделать так await.Form.next()
 
 
 @dp.message_handler(state=Form.City)
