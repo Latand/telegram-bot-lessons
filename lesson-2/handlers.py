@@ -8,6 +8,15 @@ from filters import *
 async def send_to_admin(*args):
     await bot.send_message(chat_id=admin_id, text="Бот запущен")
 
+# Спасибо Lenko Kwerty
+# Абсолютно не обязательно создавать свой фильтр для текста, так как есть встроенный.
+# @dp.message_handler(text="text")
+# @dp.message_handler(text_contains="text")
+# @dp.message_handler(text_startswith="text")
+# @dp.message_handler(text_endswith="text")
+
+# Работает для message, callback_query, inline_query и poll хендлеров
+# Вот почитать https://github.com/aiogram/aiogram/blob/dev-2.x/aiogram/dispatcher/filters/builtin.py#L203
 
 @dp.message_handler(Button("1"))
 async def btn1(message: Message):
