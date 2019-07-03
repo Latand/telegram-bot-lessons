@@ -24,34 +24,34 @@ async def btn1(message: Message):
 
 
 @dp.message_handler(Button("2"))
-async def btn1(message: Message):
+async def btn2(message: Message):
     await message.reply("Вы нажали на кнопку 2")
 
 
 @dp.message_handler(Button("3"))
-async def btn1(message: Message):
+async def btn3(message: Message):
     await message.edit_reply_markup()
     await message.reply("Вы умный человек")
 
 
 @dp.callback_query_handler(Button("1"))
-async def btn1(call: CallbackQuery):
+async def с_btn1(call: CallbackQuery):
     await call.message.reply("Вы нажали на кнопку 1")
 
 
 @dp.callback_query_handler(Button("2"))
-async def btn1(call: CallbackQuery):
+async def с_btn2(call: CallbackQuery):
     await call.message.reply("Вы нажали на кнопку 2")
 
 
 @dp.callback_query_handler(Button("3"))
-async def btn1(call: CallbackQuery):
+async def с_btn3(call: CallbackQuery):
     await call.message.edit_reply_markup()
     await call.message.reply("Вы умный человек")
 
 
 @dp.callback_query_handler(Button("user", contains=True))
-async def btn1(call: CallbackQuery):
+async def user_button(call: CallbackQuery):
     await call.message.edit_reply_markup()
     username = call.data.split("user ")[1]
     await call.message.reply(f"Ваш юзернейм: {username}")
