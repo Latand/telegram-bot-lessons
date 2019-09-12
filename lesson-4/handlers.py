@@ -4,11 +4,11 @@ from aiogram import types
 from asyncpg import Connection, Record
 from asyncpg.exceptions import UniqueViolationError
 
-from load_all import bot, dp
+from load_all import bot, dp, db
 
 
 class DBCommands:
-    pool: Connection = bot.db
+    pool: Connection = db
     ADD_NEW_USER_REFERRAL = "INSERT INTO users(chat_id, username, full_name, referral) " \
                             "VALUES ($1, $2, $3, $4) RETURNING id"
     ADD_NEW_USER = "INSERT INTO users(chat_id, username, full_name) VALUES ($1, $2, $3) RETURNING id"
