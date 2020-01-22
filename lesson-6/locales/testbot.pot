@@ -1,0 +1,151 @@
+# Translations template for PROJECT.
+# Copyright (C) 2020 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2020-01-18 22:07+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.7.0\n"
+
+#: admin_panel.py:13
+msgid "Вы отменили создание товара"
+msgstr ""
+
+#: admin_panel.py:19
+msgid "Введите название товара или нажмите /cancel"
+msgstr ""
+
+#: admin_panel.py:29
+msgid ""
+"Название: {name}\n"
+"Пришлите мне фотографию товара (не документ) или нажмите /cancel"
+msgstr ""
+
+#: admin_panel.py:45
+msgid ""
+"Название: {name}\n"
+"Пришлите мне цену товара в копейках или нажмите /cancel"
+msgstr ""
+
+#: admin_panel.py:59 handlers.py:157
+msgid "Неверное значение, введите число"
+msgstr ""
+
+#: admin_panel.py:66
+msgid "Да"
+msgstr ""
+
+#: admin_panel.py:67
+msgid "Ввести заново"
+msgstr ""
+
+#: admin_panel.py:70
+msgid ""
+"Цена: {price:,}\n"
+"Подтверждаете? Нажмите /cancel чтобы отменить"
+msgstr ""
+
+#: admin_panel.py:80
+msgid "Введите заново цену товара в копейках"
+msgstr ""
+
+#: admin_panel.py:90
+msgid "Товар удачно создан."
+msgstr ""
+
+#: handlers.py:41
+msgid ""
+"\n"
+"Приветствую вас!\n"
+"Сейчас в базе {count_users} человек!\n"
+"\n"
+"Ваша реферальная ссылка: {bot_link}\n"
+"Проверить рефералов можно по команде: /referrals\n"
+msgstr ""
+
+#: handlers.py:59
+msgid "Ваш язык был изменен"
+msgstr ""
+
+#: handlers.py:65
+msgid ""
+"Ваши рефералы:\n"
+"{referrals}"
+msgstr ""
+
+#: handlers.py:73
+msgid ""
+"<b>Товар</b> \t№{id}: <u>{name}</u>\n"
+"<b>Цена:</b> \t{price:,}\n"
+msgstr ""
+
+#: handlers.py:98
+msgid "Такого товара не существует"
+msgstr ""
+
+#: handlers.py:101
+msgid ""
+"Вы хотите купить товар \"<b>{name}</b>\" по цене: <i>{price:,}/шт.</i>\n"
+"Введите количество или нажмите отмена"
+msgstr ""
+
+#: handlers.py:121
+msgid "Согласен"
+msgstr ""
+
+#: handlers.py:125
+msgid "Ввести количество заново"
+msgstr ""
+
+#: handlers.py:129
+msgid "Отменить покупку"
+msgstr ""
+
+#: handlers.py:143
+msgid ""
+"Хорошо, вы хотите купить <i>{quantity}</i> {name} по цене "
+"<b>{price:,}/шт.</b>\n"
+"\n"
+"Получится <b>{amount:,}</b>. Подтверждаете?"
+msgstr ""
+
+#: handlers.py:163
+msgid "Вы отменили эту покупку"
+msgstr ""
+
+#: handlers.py:170
+msgid "Введите количество товара заново."
+msgstr ""
+
+#: handlers.py:183
+msgid "Оплатил"
+msgstr ""
+
+#: handlers.py:184
+msgid "Отмена"
+msgstr ""
+
+#: handlers.py:189
+msgid ""
+"Хорошо. Оплатите <b>{amount:,}</b> по методу указанному ниже и нажмите на"
+" кнопку ниже"
+msgstr ""
+
+#: handlers.py:215
+msgid "Спасибо за покупку"
+msgstr ""
+
+#: handlers.py:217
+msgid "Покупка не была подтверждена, попробуйте позже..."
+msgstr ""
+
