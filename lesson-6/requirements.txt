@@ -1,0 +1,3 @@
+git+git://github.com/aiogram/aiogram.git@7afe783914bee69df07a9cfef463248c61901ecd
+sqlalchemy
+gino
