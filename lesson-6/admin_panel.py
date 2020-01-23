@@ -1,11 +1,13 @@
+import asyncio
+
 from aiogram import types
 from aiogram.dispatcher import FSMContext
 from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 
 from config import admin_id
-from load_all import dp, _
-from states import NewItem
-from database import Item
+from load_all import dp, _, bot
+from states import NewItem, Mailing
+from database import Item, User
 
 
 @dp.message_handler(user_id=admin_id, commands=["cancel"], state=NewItem)
@@ -75,7 +77,7 @@ async def enter_price(message: types.Message, state: FSMContext):
 
 
 @dp.callback_query_handler(user_id=admin_id, text_contains="change", state=NewItem.Confirm)
-async def enter_price(call: types.CallbackQuery, state: FSMContext):
+async def enter_price(call: types.CallbackQuery):
     await call.message.edit_reply_markup()
     await call.message.answer(_("Введите заново цену товара в копейках"))
     await NewItem.Price.set()
@@ -89,3 +91,47 @@ async def enter_price(call: types.CallbackQuery, state: FSMContext):
     await item.create()
     await call.message.answer(_("Товар удачно создан."))
     await state.reset_state()
+
+
+# Фича для рассылки по юзерам (учитывая их язык)
+@dp.message_handler(user_id=admin_id, commands=["tell_everyone"])
+async def mailing(message: types.Message):
+    await message.answer(_("Пришлите текст рассылки"))
+    await Mailing.Text.set()
+
+
+@dp.message_handler(user_id=admin_id, state=Mailing.Text)
+async def mailing(message: types.Message, state: FSMContext):
+    text = message.text
+    await state.update_data(text=text)
+    markup = InlineKeyboardMarkup(
+        inline_keyboard=
+        [
+            [InlineKeyboardButton(text="Русский", callback_data="ru")],
+            [InlineKeyboardButton(text="English", callback_data="en")],
+            [InlineKeyboardButton(text="Україньска", callback_data="uk")],
+        ]
+    )
+    await message.answer(_("Пользователям на каком языке разослать это сообщение?\n\n"
+                           "Текст:\n"
+                           "{text}").format(text=text),
+                         reply_markup=markup)
+    await Mailing.Language.set()
+
+
+@dp.callback_query_handler(user_id=admin_id, state=Mailing.Language)
+async def mailing_start(call: types.CallbackQuery, state: FSMContext):
+    data = await state.get_data()
+    text = data.get("text")
+    await state.reset_state()
+    await call.message.edit_reply_markup()
+
+    users = await User.query.where(User.language == call.data).gino.all()
+    for user in users:
+        try:
+            await bot.send_message(chat_id=user.user_id,
+                                   text=text)
+            await asyncio.sleep(0.3)
+        except Exception:
+            pass
+    await call.message.answer(_("Рассылка выполнена."))

@@ -76,7 +76,7 @@ class DBCommands:
         new_user.fullname = user.full_name
 
         if referral:
-            new_user.referral = referral
+            new_user.referral = int(referral)
         await new_user.create()
         return new_user
 
@@ -88,8 +88,8 @@ class DBCommands:
         bot = Bot.get_current()
         user_id = types.User.get_current().id
 
-        id = await User.query.where(User.user_id == user_id).gino.first()
-        referrals = await User.query.where(User.referral == id).gino.all()
+        user = await User.query.where(User.user_id == user_id).gino.first()
+        referrals = await User.query.where(User.referral == user.id).gino.all()
 
         return ", ".join([
             f"{num + 1}. " + (await bot.get_chat(referral.user_id)).get_mention(as_html=True)

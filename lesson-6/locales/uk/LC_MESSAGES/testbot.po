@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2020-01-18 22:07+0200\n"
+"POT-Creation-Date: 2020-01-23 21:33+0200\n"
 "PO-Revision-Date: 2020-01-18 12:08+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: uk\n"
@@ -19,53 +19,79 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.7.0\n"
 
-#: admin_panel.py:13
+#: admin_panel.py:15
 msgid "Вы отменили создание товара"
-msgstr ""
+msgstr "Ви скасували створення товару"
 
-#: admin_panel.py:19
+#: admin_panel.py:21
 msgid "Введите название товара или нажмите /cancel"
-msgstr ""
+msgstr "Введіть назву товару або натисніть /cancel"
 
-#: admin_panel.py:29
+#: admin_panel.py:31
 msgid ""
 "Название: {name}\n"
 "Пришлите мне фотографию товара (не документ) или нажмите /cancel"
 msgstr ""
+"Назва: {name} \\ nПришліть мені фотографію товару (не документ) або "
+"натисніть /cancel"
 
-#: admin_panel.py:45
+#: admin_panel.py:47
 msgid ""
 "Название: {name}\n"
 "Пришлите мне цену товара в копейках или нажмите /cancel"
 msgstr ""
+"Назва: {name} \n"
+"Пришліть мені ціну товару в копійках або натисніть /cancel"
 
-#: admin_panel.py:59 handlers.py:157
+#: admin_panel.py:61 handlers.py:196
 msgid "Неверное значение, введите число"
-msgstr ""
+msgstr "Введіть число"
 
-#: admin_panel.py:66
+#: admin_panel.py:68
 msgid "Да"
-msgstr ""
+msgstr "Так"
 
-#: admin_panel.py:67
+#: admin_panel.py:69
 msgid "Ввести заново"
 msgstr ""
 
-#: admin_panel.py:70
+#: admin_panel.py:72
 msgid ""
 "Цена: {price:,}\n"
 "Подтверждаете? Нажмите /cancel чтобы отменить"
 msgstr ""
+"Ціна: {price:,} \n"
+"Чи підтверджуєте? Натисніть /cancel щоб скасувати"
 
-#: admin_panel.py:80
+#: admin_panel.py:82
 msgid "Введите заново цену товара в копейках"
-msgstr ""
+msgstr "Введіть заново ціну товару в копійках"
 
-#: admin_panel.py:90
+#: admin_panel.py:92
 msgid "Товар удачно создан."
-msgstr ""
+msgstr "Товар створений."
 
-#: handlers.py:41
+#: admin_panel.py:98
+msgid "Пришлите текст рассылки"
+msgstr "Надішліть текст розсилки"
+
+#: admin_panel.py:114
+msgid ""
+"Пользователям на каком языке разослать это сообщение?\n"
+"\n"
+"Текст:\n"
+"{text}"
+msgstr ""
+"Користувачам якої мови розіслати це повідомлення?\n"
+"\n"
+"Текст:\n"
+"{text}"
+
+#: admin_panel.py:136
+msgid "Рассылка выполнена."
+msgstr "Розсилка виконана"
+
+#: handlers.py:50
 msgid ""
 "\n"
 "Приветствую вас!\n"
@@ -74,86 +100,95 @@ msgid ""
 "Ваша реферальная ссылка: {bot_link}\n"
 "Проверить рефералов можно по команде: /referrals\n"
 msgstr ""
+"\n"
+"Вітаю вас! \n"
+"Зараз в базі {count_users} людей! \n"
+"\n"
+"Ваша реферальная посилання: {bot_link} \n"
+"Перевірити рефералів можна по команді: /referrals \n"
 
-#: handlers.py:59
+#: handlers.py:72
 msgid "Ваш язык был изменен"
-msgstr ""
+msgstr "Мова була змінена"
 
-#: handlers.py:65
+#: handlers.py:78
 msgid ""
 "Ваши рефералы:\n"
 "{referrals}"
 msgstr ""
+"Ваші реферали: \n"
+"{referrals}"
 
-#: handlers.py:73
+#: handlers.py:90
 msgid ""
 "<b>Товар</b> \t№{id}: <u>{name}</u>\n"
 "<b>Цена:</b> \t{price:,}\n"
 msgstr ""
+"<b> Товар </b> \t№ {id}: <u> {name} </u> \n"
+"<b> Ціна: </b> \t {price:,} \n"
 
-#: handlers.py:98
+#: handlers.py:97
+msgid "Купить"
+msgstr "Купити"
+
+#: handlers.py:127
 msgid "Такого товара не существует"
-msgstr ""
+msgstr "Такого товару не існує"
 
-#: handlers.py:101
+#: handlers.py:130
 msgid ""
 "Вы хотите купить товар \"<b>{name}</b>\" по цене: <i>{price:,}/шт.</i>\n"
 "Введите количество или нажмите отмена"
 msgstr ""
+"Ви хочете купити товар \" <b> {name} </b> \"за ціною: <i> {price:,} / шт."
+" </i> \n"
+"Введіть кількість або натисніть скасування"
 
-#: handlers.py:121
+#: handlers.py:160
 msgid "Согласен"
-msgstr ""
+msgstr "Згоден"
 
-#: handlers.py:125
+#: handlers.py:164
 msgid "Ввести количество заново"
-msgstr ""
+msgstr "Ввести кількість заново"
 
-#: handlers.py:129
+#: handlers.py:168
 msgid "Отменить покупку"
-msgstr ""
+msgstr "Скасувати покупку"
 
-#: handlers.py:143
+#: handlers.py:182
 msgid ""
 "Хорошо, вы хотите купить <i>{quantity}</i> {name} по цене "
 "<b>{price:,}/шт.</b>\n"
 "\n"
 "Получится <b>{amount:,}</b>. Подтверждаете?"
 msgstr ""
+"Добре, ви хочете купити <i> {quantity} </i> {name} за ціною<b> {price:,} "
+"/ шт. </b> \n"
+"\n"
+"Вийде <b> {amount:,} </b>. Підтверджуєте?"
 
-#: handlers.py:163
+#: handlers.py:203
 msgid "Вы отменили эту покупку"
-msgstr ""
+msgstr "Ви скасували цю покупку"
 
-#: handlers.py:170
+#: handlers.py:211
 msgid "Введите количество товара заново."
-msgstr ""
+msgstr "Введіть кількість товару заново."
 
-#: handlers.py:183
-msgid "Оплатил"
-msgstr ""
-
-#: handlers.py:184
-msgid "Отмена"
-msgstr ""
-
-#: handlers.py:189
+#: handlers.py:226
 msgid ""
 "Хорошо. Оплатите <b>{amount:,}</b> по методу указанному ниже и нажмите на"
 " кнопку ниже"
 msgstr ""
+"Добре. Сплатіть <b> {amount:,} </b> за методом вказаною нижче і натисніть"
+" накнопку нижче"
 
-#: handlers.py:215
+#: handlers.py:277
 msgid "Спасибо за покупку"
-msgstr ""
+msgstr "Дякуємо за покупку"
 
-#: handlers.py:217
+#: handlers.py:279
 msgid "Покупка не была подтверждена, попробуйте позже..."
-msgstr ""
-
-#~ msgid ""
-#~ "<b>Товар</b> \t№{id}: <u>{name}</u>\n"
-#~ "<b>Цена:</b> \t{price:,}\n"
-#~ "<u>Купить:</u> \t/buy_{id}"
-#~ msgstr ""
+msgstr "Покупка не була підтверджена, спробуйте пізніше ..."
 

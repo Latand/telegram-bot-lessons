@@ -94,7 +94,7 @@ async def show_items(message: Message):
             [
                 [
                     # Создаем кнопку "купить" и передаем ее айдишник в функцию создания коллбека
-                    InlineKeyboardButton(text="Купить", callback_data=buy_item.new(item_id=item.id))
+                    InlineKeyboardButton(text=_("Купить"), callback_data=buy_item.new(item_id=item.id))
                 ],
             ]
         )
@@ -206,7 +206,7 @@ async def approval(call: CallbackQuery, state: FSMContext):
 
 # Если человек нажал "ввести заново"
 @dp.callback_query_handler(text_contains="change", state=states.Purchase.Approval)
-async def approval(call: CallbackQuery, state: FSMContext):
+async def approval(call: CallbackQuery):
     await call.message.edit_reply_markup()  # Убираем кнопки
     await call.message.answer(_("Введите количество товара заново."))
     await states.Purchase.EnterQuantity.set()

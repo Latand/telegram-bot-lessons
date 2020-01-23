@@ -12,3 +12,8 @@ class NewItem(StatesGroup):
     Photo = State()
     Price = State()
     Confirm = State()
+
+
+class Mailing(StatesGroup):
+    Text = State()
+    Language = State()
