@@ -10,7 +10,7 @@ from aiogram.utils.callback_data import CallbackData
 
 import database
 import states
-from config import lp_token
+from config import lp_token, admin_id
 from load_all import dp, bot, _
 
 db = database.DBCommands()
@@ -47,16 +47,18 @@ async def register_user(message: types.Message):
     # Для многоязычности, все тексты, передаваемые пользователю должны передаваться в функцию "_"
     # Вместо "текст" передаем _("текст")
 
-    text = _("\n"
-             "Приветствую вас!\n"
+    text = _("Приветствую вас!!\n"
              "Сейчас в базе {count_users} человек!\n"
              "\n"
              "Ваша реферальная ссылка: {bot_link}\n"
-             "Проверить рефералов можно по команде: /referrals\n").format(
+             "Проверить рефералов можно по команде: /referrals\n"
+             "Просмотреть товары: /items").format(
         count_users=count_users,
         bot_link=bot_link
     )
-
+    if message.from_user.id == admin_id:
+        text += _("\n"
+                  "Добавить новый товар: /add_item")
     await bot.send_message(chat_id, text, reply_markup=languages_markup)
 
 

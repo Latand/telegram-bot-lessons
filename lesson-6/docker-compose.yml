@@ -10,3 +10,15 @@ services:
     env_file:
       - ".env"
     network_mode: "host"
+
+  tgbot:
+    container_name: bot
+    build:
+      context: .
+    command: python app.py
+    restart: always
+
+    env_file:
+      - ".env"
+    depends_on:
+      - db

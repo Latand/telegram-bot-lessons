@@ -14,9 +14,8 @@ pybabel compile -d locales -D testbot
 
 
 Обновляем переводы
-1. Вытаскиваем тексты из файлов
+1. Вытаскиваем тексты из файлов, Добавляем текст в переведенные версии
 pybabel extract . -o locales/testbot.pot
-2. Добавляем текст в переведенные версии
 pybabel update -d locales -D testbot -i locales/testbot.pot
 3. Вручную делаем переводы, а потом Собираем
 pybabel compile -d locales -D testbot
