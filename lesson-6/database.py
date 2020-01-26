@@ -1,8 +1,9 @@
 from aiogram import types, Bot
 from gino import Gino
 from gino.schema import GinoSchemaVisitor
-from sqlalchemy import (Integer, Column, BigInteger, String,
-                        Sequence, TIMESTAMP, Boolean, sql, JSON)
+from sqlalchemy import (Column, Integer, BigInteger, String,
+                        Sequence, TIMESTAMP, Boolean, JSON)
+from sqlalchemy import sql
 
 from config import db_pass, db_user, host
 
@@ -55,30 +56,35 @@ class Purchase(db.Model):
     shipping_address = Column(JSON)
     phone_number = Column(String(50))
     email = Column(String(200))
-    name = Column(String(100))
+    receiver = Column(String(100))
     successful = Column(Boolean, default=False)
-
-    def __repr__(self):
-        return "<Purchases(id='{}', buyer='{}', amount='{}', quantity='{}', time='{}')>".format(
-            self.id, self.buyer, self.amount, self.quantity, self.purchase_time)
 
 
 class DBCommands:
 
+    async def get_user(self, user_id):
+        user = await User.query.where(User.user_id == user_id).gino.first()
+        return user
+
     async def add_new_user(self, referral=None):
         user = types.User.get_current()
-        old_user = await User.query.where(User.user_id == user.id).gino.first()
+        old_user = await self.get_user(user.id)
         if old_user:
             return old_user
         new_user = User()
         new_user.user_id = user.id
         new_user.username = user.username
-        new_user.fullname = user.full_name
+        new_user.full_name = user.full_name
 
         if referral:
             new_user.referral = int(referral)
         await new_user.create()
         return new_user
+
+    async def set_language(self, language):
+        user_id = types.User.get_current().id
+        user = await self.get_user(user_id)
+        await user.update(language=language).apply()
 
     async def count_users(self) -> int:
         total = await db.func.count(User.id).gino.scalar()
@@ -101,20 +107,11 @@ class DBCommands:
 
         return items
 
-    async def get_user(self, user_id):
-        user = await User.query.where(User.user_id == user_id).gino.first()
-        return user
 
-    async def set_language(self, language):
-        user_id = types.User.get_current().id
-        user = await self.get_user(user_id)
-        await user.update(language=language).apply()
-
-
-async def run_db():
+async def create_db():
     await db.set_bind(f'postgresql://{db_user}:{db_pass}@{host}/gino')
 
     # Create tables
     db.gino: GinoSchemaVisitor
-    # await db.gino.drop_all()
+    await db.gino.drop_all()
     await db.gino.create_all()

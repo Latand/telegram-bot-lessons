@@ -86,7 +86,6 @@ async def check_referrals(message: types.Message):
 async def show_items(message: Message):
     # Достаем товары из базы данных
     all_items = await db.show_items()
-
     # Проходимся по товарам, пронумеровывая
     for num, item in enumerate(all_items):
         text = _("<b>Товар</b> \t№{id}: <u>{name}</u>\n"
@@ -118,7 +117,6 @@ async def show_items(message: Message):
 # Для фильтрования по коллбекам можно использовать buy_item.filter()
 @dp.callback_query_handler(buy_item.filter())
 async def buying_item(call: CallbackQuery, callback_data: dict, state: FSMContext):
-
     # То, что мы указали в CallbackData попадает в хендлер под callback_data, как словарь, поэтому достаем айдишник
     item_id = int(callback_data.get("item_id"))
     await call.message.edit_reply_markup()
@@ -272,7 +270,7 @@ async def checkout(query: PreCheckoutQuery, state: FSMContext):
             if query.order_info.shipping_address
             else None,
             phone_number=query.order_info.phone_number,
-            name=query.order_info.name,
+            receiver=query.order_info.name,
             email=query.order_info.email
         ).apply()
         await state.reset_state()

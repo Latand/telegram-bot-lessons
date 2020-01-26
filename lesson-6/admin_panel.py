@@ -1,4 +1,4 @@
-import asyncio
+from asyncio import sleep
 
 from aiogram import types
 from aiogram.dispatcher import FSMContext
@@ -131,7 +131,7 @@ async def mailing_start(call: types.CallbackQuery, state: FSMContext):
         try:
             await bot.send_message(chat_id=user.user_id,
                                    text=text)
-            await asyncio.sleep(0.3)
+            await sleep(0.3)
         except Exception:
             pass
     await call.message.answer(_("Рассылка выполнена."))

@@ -5,8 +5,8 @@ services:
     container_name: database
     image: sameersbn/postgresql:10-2
     restart: always
-#    ports:
-#      - 5432:5432
+    #    ports:
+    #      - 5432:5432
     env_file:
       - ".env"
     network_mode: "host"
@@ -20,5 +20,4 @@ services:
 
     env_file:
       - ".env"
-    depends_on:
-      - db
+
