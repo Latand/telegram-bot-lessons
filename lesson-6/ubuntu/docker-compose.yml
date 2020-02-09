@@ -5,8 +5,8 @@ services:
     container_name: database
     image: sameersbn/postgresql:10-2
     restart: always
-        ports:
-          - 5432:5432
+    ports:
+      - 5432:5432
     env_file:
       - ".env"
     network_mode: "host"
@@ -14,7 +14,7 @@ services:
   tgbot:
     container_name: bot
     build:
-      context: ..
+      context: .
     network_mode: "host"
 
     command: python app.py
