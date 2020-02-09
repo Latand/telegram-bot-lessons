@@ -8,9 +8,10 @@ from aiogram.types import (Message, InlineKeyboardMarkup, InlineKeyboardButton,
                            CallbackQuery, LabeledPrice, PreCheckoutQuery)
 from aiogram.utils.callback_data import CallbackData
 
-from ubuntu import states, database
-from ubuntu.config import lp_token, admin_id
-from ubuntu.load_all import dp, bot, _
+import database
+import states
+from config import lp_token, admin_id
+from load_all import dp, bot, _
 
 db = database.DBCommands()
 

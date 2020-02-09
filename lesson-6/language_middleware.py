@@ -1,7 +1,7 @@
 from aiogram.contrib.middlewares.i18n import I18nMiddleware
 from aiogram import types
-from ubuntu.config import I18N_DOMAIN, LOCALES_DIR
-from ubuntu.database import DBCommands
+from config import I18N_DOMAIN, LOCALES_DIR
+from database import DBCommands
 
 db = DBCommands()
 

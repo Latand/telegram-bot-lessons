@@ -5,8 +5,8 @@ from aiogram import Bot
 from aiogram import Dispatcher
 from aiogram.contrib.fsm_storage.memory import MemoryStorage
 
-from ubuntu.config import TOKEN
-from ubuntu.language_middleware import setup_middleware
+from config import TOKEN
+from language_middleware import setup_middleware
 
 #######################
 # Если у вас РКН блокирует запросы к Телеграму, можете перезаписать адрес по которому делаются запросы
