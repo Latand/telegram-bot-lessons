@@ -1,0 +1,234 @@
+# Ukrainian translations for PROJECT.
+# Copyright (C) 2020 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2020-01-26 10:45+0200\n"
+"PO-Revision-Date: 2020-01-18 12:08+0200\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: uk\n"
+"Language-Team: uk <LL@li.org>\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.7.0\n"
+
+#: admin_panel.py:15
+msgid "Вы отменили создание товара"
+msgstr "Ви скасували створення товару"
+
+#: admin_panel.py:21
+msgid "Введите название товара или нажмите /cancel"
+msgstr "Введіть назву товару або натисніть /cancel"
+
+#: admin_panel.py:31
+msgid ""
+"Название: {name}\n"
+"Пришлите мне фотографию товара (не документ) или нажмите /cancel"
+msgstr ""
+"Назва: {name} \n"
+"Пришліть мені фотографію товару (не документ) або натисніть /cancel"
+
+#: admin_panel.py:47
+msgid ""
+"Название: {name}\n"
+"Пришлите мне цену товара в копейках или нажмите /cancel"
+msgstr ""
+"Назва: {name} \n"
+"Пришліть мені ціну товару в копійках або натисніть /cancel"
+
+#: admin_panel.py:61 handlers.py:198
+msgid "Неверное значение, введите число"
+msgstr "Введіть число"
+
+#: admin_panel.py:68
+msgid "Да"
+msgstr "Так"
+
+#: admin_panel.py:69
+msgid "Ввести заново"
+msgstr ""
+
+#: admin_panel.py:72
+msgid ""
+"Цена: {price:,}\n"
+"Подтверждаете? Нажмите /cancel чтобы отменить"
+msgstr ""
+"Ціна: {price:,} \n"
+"Чи підтверджуєте? Натисніть /cancel щоб скасувати"
+
+#: admin_panel.py:82
+msgid "Введите заново цену товара в копейках"
+msgstr "Введіть заново ціну товару в копійках"
+
+#: admin_panel.py:92
+msgid "Товар удачно создан."
+msgstr "Товар створений."
+
+#: admin_panel.py:99
+msgid "Пришлите текст рассылки"
+msgstr "Надішліть текст розсилки"
+
+#: admin_panel.py:115
+msgid ""
+"Пользователям на каком языке разослать это сообщение?\n"
+"\n"
+"Текст:\n"
+"{text}"
+msgstr ""
+"Користувачам якої мови розіслати це повідомлення?\n"
+"\n"
+"Текст:\n"
+"{text}"
+
+#: admin_panel.py:137
+msgid "Рассылка выполнена."
+msgstr "Розсилка виконана"
+
+#: handlers.py:50
+msgid ""
+"Приветствую вас!!\n"
+"Сейчас в базе {count_users} человек!\n"
+"\n"
+"Ваша реферальная ссылка: {bot_link}\n"
+"Проверить рефералов можно по команде: /referrals\n"
+"Просмотреть товары: /items"
+msgstr ""
+"Вітаю вас! \n"
+"Зараз в базі {count_users} людей! \n"
+"\n"
+"Ваша реферальная посилання: {bot_link} \n"
+"Перевірити рефералів можна по команді: /referrals \n"
+"Переглянути товари: /items"
+
+#: handlers.py:60
+msgid ""
+"\n"
+"Добавить новый товар: /add_item"
+msgstr ""
+"\n"
+"Додати новий товар: /add_item"
+
+#: handlers.py:74
+msgid "Ваш язык был изменен"
+msgstr "Мова була змінена"
+
+#: handlers.py:80
+msgid ""
+"Ваши рефералы:\n"
+"{referrals}"
+msgstr ""
+"Ваші реферали: \n"
+"{referrals}"
+
+#: handlers.py:92
+msgid ""
+"<b>Товар</b> \t№{id}: <u>{name}</u>\n"
+"<b>Цена:</b> \t{price:,}\n"
+msgstr ""
+"<b> Товар </b> \t№ {id}: <u> {name} </u> \n"
+"<b> Ціна: </b> \t {price:,} \n"
+
+#: handlers.py:99
+msgid "Купить"
+msgstr "Купити"
+
+#: handlers.py:129
+msgid "Такого товара не существует"
+msgstr "Такого товару не існує"
+
+#: handlers.py:132
+msgid ""
+"Вы хотите купить товар \"<b>{name}</b>\" по цене: <i>{price:,}/шт.</i>\n"
+"Введите количество или нажмите отмена"
+msgstr ""
+"Ви хочете купити товар \" <b> {name} </b> \"за ціною: <i> {price:,} / шт."
+" </i> \n"
+"Введіть кількість або натисніть скасування"
+
+#: handlers.py:162
+msgid "Согласен"
+msgstr "Згоден"
+
+#: handlers.py:166
+msgid "Ввести количество заново"
+msgstr "Ввести кількість заново"
+
+#: handlers.py:170
+msgid "Отменить покупку"
+msgstr "Скасувати покупку"
+
+#: handlers.py:184
+msgid ""
+"Хорошо, вы хотите купить <i>{quantity}</i> {name} по цене "
+"<b>{price:,}/шт.</b>\n"
+"\n"
+"Получится <b>{amount:,}</b>. Подтверждаете?"
+msgstr ""
+"Добре, ви хочете купити <i> {quantity} </i> {name} за ціною<b> {price:,} "
+"/ шт. </b> \n"
+"\n"
+"Вийде <b> {amount:,} </b>. Підтверджуєте?"
+
+#: handlers.py:205
+msgid "Вы отменили эту покупку"
+msgstr "Ви скасували цю покупку"
+
+#: handlers.py:213
+msgid "Введите количество товара заново."
+msgstr "Введіть кількість товару заново."
+
+#: handlers.py:228
+msgid ""
+"Хорошо. Оплатите <b>{amount:,}</b> по методу указанному ниже и нажмите на"
+" кнопку ниже"
+msgstr ""
+"Добре. Сплатіть <b> {amount:,} </b> за методом вказаною нижче і натисніть"
+" накнопку нижче"
+
+#: handlers.py:279
+msgid "Спасибо за покупку"
+msgstr "Дякуємо за покупку"
+
+#: handlers.py:281
+msgid "Покупка не была подтверждена, попробуйте позже..."
+msgstr "Покупка не була підтверджена, спробуйте пізніше ..."
+
+#~ msgid ""
+#~ "\n"
+#~ "Приветствую вас!\n"
+#~ "Сейчас в базе {count_users} человек!\n"
+#~ "\n"
+#~ "Ваша реферальная ссылка: {bot_link}\n"
+#~ "Проверить рефералов можно по команде: /referrals\n"
+#~ msgstr ""
+#~ "\n"
+#~ "Вітаю вас! \n"
+#~ "Зараз в базі {count_users} людей! \n"
+#~ "\n"
+#~ "Ваша реферальная посилання: {bot_link} \n"
+#~ "Перевірити рефералів можна по команді: /referrals \n"
+
+#~ msgid ""
+#~ "\n"
+#~ "Приветствую вас!\n"
+#~ "Сейчас в базе {count_users} человек!\n"
+#~ "\n"
+#~ "Ваша реферальная ссылка: {bot_link}\n"
+#~ "Проверить рефералов можно по команде: /referrals\n"
+#~ "Просмотреть товары: /items"
+#~ msgstr ""
+#~ "\n"
+#~ "Вітаю вас! \n"
+#~ "Зараз в базі {count_users} людей! \n"
+#~ "\n"
+#~ "Ваша реферальная посилання: {bot_link} \n"
+#~ "Перевірити рефералів можна по команді: /referrals \n"
+#~ "Переглянути товари: /items"
+
