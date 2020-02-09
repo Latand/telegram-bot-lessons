@@ -5,7 +5,7 @@ from sqlalchemy import (Column, Integer, BigInteger, String,
                         Sequence, TIMESTAMP, Boolean, JSON)
 from sqlalchemy import sql
 
-from ubuntu.config import db_pass, db_user, host
+from config import db_pass, db_user, host
 
 db = Gino()
 

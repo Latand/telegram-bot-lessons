@@ -2,9 +2,9 @@ import asyncio
 
 from aiogram import executor
 
-from ubuntu.config import admin_id
-from ubuntu.database import create_db
-from ubuntu.load_all import bot
+from config import admin_id
+from database import create_db
+from load_all import bot
 
 
 async def on_shutdown(dp):

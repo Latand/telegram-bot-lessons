@@ -4,10 +4,10 @@ from aiogram import types
 from aiogram.dispatcher import FSMContext
 from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 
-from ubuntu.config import admin_id
-from ubuntu.load_all import dp, _, bot
-from ubuntu.states import NewItem, Mailing
-from ubuntu.database import Item, User
+from config import admin_id
+from load_all import dp, _, bot
+from states import NewItem, Mailing
+from database import Item, User
 
 
 @dp.message_handler(user_id=admin_id, commands=["cancel"], state=NewItem)
