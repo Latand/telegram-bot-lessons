@@ -10,6 +10,6 @@ storage = MemoryStorage()
 dp = Dispatcher(bot, storage=storage, loop=loop)
 
 if __name__ == '__main__':
-    from handlers import *
+    from handlers import dp
 
     executor.start_polling(dp, on_startup=send_to_admin)
