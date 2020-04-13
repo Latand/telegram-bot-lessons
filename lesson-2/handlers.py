@@ -30,7 +30,6 @@ async def btn2(message: Message):
 
 @dp.message_handler(Button("3"))
 async def btn3(message: Message):
-    await message.edit_reply_markup()
     await message.reply("Вы умный человек")
 
 
