@@ -1,8 +1,9 @@
-from loader import bot
+from loader import bot, storage
 
 
 async def on_shutdown(dp):
     await bot.close()
+    await storage.close()
 
 
 if __name__ == '__main__':
