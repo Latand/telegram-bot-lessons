@@ -64,4 +64,3 @@ async def answer_q2(message: types.Message, state: FSMContext):
 
     # Вариант завершения 3 - без стирания данных в data
     # await state.reset_state(with_data=False)
-
