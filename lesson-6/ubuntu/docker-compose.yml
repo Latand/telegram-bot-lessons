@@ -6,7 +6,7 @@ services:
     image: sameersbn/postgresql:10-2
     environment:
       POSTGRES_DB: $DB_NAME
-      POSTGRES_PASSWORD: $DB_PASS    
+      PG_PASSWORD: $DB_PASS    
     restart: always
     ports:
       - 5432:5432
