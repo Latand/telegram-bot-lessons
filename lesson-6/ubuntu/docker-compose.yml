@@ -5,7 +5,7 @@ services:
     container_name: database
     image: sameersbn/postgresql:10-2
     environment:
-      POSTGRES_DB: $DB_NAME
+      DB_NAME: $DB_NAME
       PG_PASSWORD: $DB_PASS    
     restart: always
     ports:
