@@ -1,6 +1,6 @@
 # Telegram Bot Lessons
 
-Видео урок по разработке этого Telegram бота (Клик для просмотра)<br /><br />
+Код для Видео уроков на YouTube
 [![Видео](https://i.ytimg.com/vi/Ja2vJWcfPyg/hqdefault.jpg)](https://www.youtube.com/watch?v=wj1Vwq3IrL4&list=PLwVBSkoL97Q3phZRyInbM4lShvS1cBl-U "Разработка Telegram Bot на Python.")
 
 # Latand - Physics is Simple
