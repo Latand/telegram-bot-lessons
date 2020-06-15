@@ -1,7 +1,10 @@
-# telegram-bot-lessons
+# Telegram-Bot-Tutorial
 
-Код к <a href="https://www.youtube.com/playlist?list=PLwVBSkoL97Q3phZRyInbM4lShvS1cBl-U">серии видеоуроков на youtube</a>
+Видео урок по разработке этого Telegram бота (Клик для просмотра)<br /><br />
+[![Видео](https://i.ytimg.com/vi/Ja2vJWcfPyg/hqdefault.jpg)](https://www.youtube.com/watch?v=wj1Vwq3IrL4&list=PLwVBSkoL97Q3phZRyInbM4lShvS1cBl-U "Разработка Telegram Bot на Python.")
 
+# Latand - Physics is Simple
 
-Клонировать проект:
-<code>git clone https://github.com/Latand/telegram-bot-lessons</code>
+![Telegram](https://img.icons8.com/cute-clipart/2x/telegram-app.png) [Telegram](https://t.me/latand)
+
+![YouTube PhysicsIsSimple](https://s.ytimg.com/yts/img/favicon-vflz7uhzw.ico) [YouTube](https://www.youtube.com/c/PhysicsIsSimple)
