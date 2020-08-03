@@ -95,10 +95,9 @@ class DBCommands:
         user_id = types.User.get_current().id
 
         user = await User.query.where(User.user_id == user_id).gino.first()
-        count_referrals = (await db.func.count(User.referral == user.id).gino.all())[0][0]
         referrals = await User.query.where(User.referral == user.id).gino.all()
 
-        return f"Рефералов {count_referrals}" + ",".join([
+        return ", ".join([
             f"{num + 1}. " + (await bot.get_chat(referral.user_id)).get_mention(as_html=True)
             for num, referral in enumerate(referrals)
         ])
@@ -114,5 +113,5 @@ async def create_db():
 
     # Create tables
     db.gino: GinoSchemaVisitor
-    # await db.gino.drop_all()
-    # await db.gino.create_all()
+    await db.gino.drop_all()
+    await db.gino.create_all()
