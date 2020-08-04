@@ -1,6 +1,7 @@
 from gino import Gino
 from gino.schema import GinoSchemaVisitor
 from data.config import POSTGRES_URI
+from utils.db_api import add_to_database
 
 db = Gino()
 
@@ -16,3 +17,4 @@ async def create_db():
     # Создаем таблицы
     # await db.gino.drop_all()
     # await db.gino.create_all()
+    # await add_to_database.add_items()
