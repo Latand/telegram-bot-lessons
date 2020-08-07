@@ -17,4 +17,3 @@ async def create_db():
     # Создаем таблицы
     # await db.gino.drop_all()
     # await db.gino.create_all()
-    # await add_to_database.add_items()
