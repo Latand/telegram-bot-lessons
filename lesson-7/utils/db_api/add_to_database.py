@@ -1,5 +1,8 @@
 from utils.db_api.db_commands import add_item
 
+import asyncio
+
+from utils.db_api.database import create_db
 
 # Используем эту функцию, чтобы заполнить базу данных товарами
 async def add_items():
@@ -39,3 +42,7 @@ async def add_items():
                    category_name="🛍 Услуги Рекламы", category_code="Ads",
                    subcategory_name="🗣 На Вконтакте", subcategory_code="VK",
                    price=100, photo="-")
+
+loop = asyncio.get_event_loop()
+loop.run_until_complete(create_db())
+loop.run_until_complete(add_items())
