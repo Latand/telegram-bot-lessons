@@ -3,6 +3,7 @@ from asyncio import sleep
 from aiogram import types
 from aiogram.dispatcher import FSMContext
 from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton
+from aiogram.utils import exceptions
 
 from config import admin_id
 from load_all import dp, _, bot
@@ -126,12 +127,34 @@ async def mailing_start(call: types.CallbackQuery, state: FSMContext):
     await state.reset_state()
     await call.message.edit_reply_markup()
 
-    users = await User.query.where(User.language == call.data).gino.all()
-    for user in users:
+    # use logging for check result
+    log = logging.getLogger("broadcast")
+    # get only user_id from db
+    users_id = [uid[0] for uid in await User.select("user_id").where(User.language == call.data).gino.all()]
+    for user_id in users_id:
         try:
-            await bot.send_message(chat_id=user.user_id,
-                                   text=text)
-            await sleep(0.3)
-        except Exception:
+            await bot.send_message(chat_id=user_id, text=text)
+            await sleep(0.05)  # Telegram limit 30 message per second, here set 20 msg per second
+
+        except exceptions.BotBlocked:
+            log.error(f"Target [ID:{user_id}]: blocked by user")
+
+        except exceptions.ChatNotFound:
+            log.error(f"Target [ID:{user_id}]: invalid user ID")
+
+        except exceptions.RetryAfter as e:
+            log.error(f"Target [ID:{user_id}]: Flood limit is exceeded. Sleep {e.timeout} seconds.")
+            await sleep(e.timeout)
+            return await bot.send_message(user_id, text)  # Recursive call
+
+        except exceptions.UserDeactivated:
+            log.error(f"Target [ID:{user_id}]: user is deactivated")
+
+        except exceptions.TelegramAPIError:
+            log.exception(f"Target [ID:{user_id}]: failed")
             pass
+
+        else:
+            log.info(f"Target [ID:{user_id}]: success")
+    
     await call.message.answer(_("Рассылка выполнена."))
