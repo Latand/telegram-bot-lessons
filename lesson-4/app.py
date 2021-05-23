@@ -9,7 +9,10 @@ async def on_shutdown(dp):
 
 
 async def on_startup(dp):
-    await bot.send_message(admin_id, "Я запущен!")
+    await db.create() #Метод создания pool
+    await db.create_db() #Создание таблиц
+
+    await dp.bot.send_message(admin_id, "Я запущен!")
 
 
 if __name__ == '__main__':
